@@ -4,9 +4,7 @@ import React, {Fragment} from "react";
 import TablePeople from "../organisms/TablePeople";
 
 const ListPeople = () => {
-    return <Fragment>
-        <TablePeople />
-    </Fragment>;
+    return <Fragment><TablePeople /></Fragment>;
 };
 
 export default ListPeople;

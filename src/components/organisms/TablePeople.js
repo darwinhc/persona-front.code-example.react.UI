@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from 'react-router-dom';
 
 // Design
-import {Button, Modal, Space, Table} from "antd";
+import {Button, Modal, notification, Space, Table} from "antd";
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons'
 
 // Constants
@@ -26,8 +26,14 @@ const TablePeople = () => {
     const showModal = (id) => { setIsModalVisible(true); selectPerson(id)};
     const handleDelete = async () => {
         setIsModalVisible(false);
-        await axios.delete(`${BACKEND_ENDPOINT}/api/persona/${personSelected}`)
-        dispatch(deletePerson(personSelected))
+        try {
+            await axios.delete(`${BACKEND_ENDPOINT}/api/persona/${personSelected}`)
+            notification.open({message: "Usuario eliminado correctamente"})
+            dispatch(deletePerson(personSelected))
+        }catch(e){
+            notification.open({message: "Error al eliminar usuario",
+                description: e.message})
+        }
     };
     const handleNoDelete = () => { setIsModalVisible(false); };
 

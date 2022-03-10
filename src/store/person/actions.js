@@ -1,7 +1,9 @@
 import { CREATED_PERSON, DELETED_PERSON,
     LOADED_PEOPLE, UPDATED_PERSON } from "./types";
 
+
 export const loadPeople = people => {
+
     return { type: LOADED_PEOPLE, payload: people };
 };
 

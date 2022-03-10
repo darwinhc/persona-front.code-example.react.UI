@@ -1,21 +1,31 @@
 import React, {Fragment, useEffect} from "react"
 import {Link, useLocation, useNavigate} from "react-router-dom";
+import {PageHeader, notification} from 'antd';
 
-import {PageHeader} from 'antd';
 import {useDispatch, useSelector} from "react-redux";
 import axios from "axios";
 import {BACKEND_ENDPOINT} from "../../constants/endpoints";
 import {loadPeople} from "../../store/person/actions";
 
+
 const GeneralLayout = ({children}) => {
+
+
     const { pathname } = useLocation();
     const navigate = useNavigate();
     const people = useSelector((state) => state.person);
     const dispatch = useDispatch();
 
     const fetchPeople = async () => {
-        const res = await axios.get(`${BACKEND_ENDPOINT}/api/persona`);
-        dispatch(loadPeople(res.data));
+        try {
+            const res = await axios.get(`${BACKEND_ENDPOINT}/api/persona`);
+            dispatch(loadPeople(res.data));
+            notification.open({
+                message: 'Carga satisfactoria de datos'
+            })
+        }catch(e){
+            notification.open({message: 'Error al cargar datos'})
+        }
     }
 
     useEffect( () => { if (people === null) fetchPeople() }, []);

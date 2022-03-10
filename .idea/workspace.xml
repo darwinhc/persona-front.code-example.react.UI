@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6e4cb70a-1fb9-4379-9559-fd2ae0cf1fd0" name="Changes" comment="" />
+    <list default="true" id="6e4cb70a-1fb9-4379-9559-fd2ae0cf1fd0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layouts/general.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layouts/general.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/organisms/TablePeople.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/organisms/TablePeople.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/createPerson.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/createPerson.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/listPeople.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/listPeople.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/updatePerson.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/updatePerson.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/person/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/person/actions.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1646880134356</updated>
       <workItem from="1646880136066" duration="4158000" />
-      <workItem from="1646917704111" duration="10596000" />
+      <workItem from="1646917704111" duration="12157000" />
     </task>
     <servers />
   </component>

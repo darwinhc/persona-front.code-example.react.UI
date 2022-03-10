@@ -9,6 +9,7 @@ import PersonForm from "../organisms/PersonForm";
 // Constants
 import {BACKEND_ENDPOINT} from "../../constants/endpoints";
 import {updatePerson} from "../../store/person/actions";
+import {notification} from "antd";
 
 
 const UpdatePerson = () => {
@@ -17,11 +18,22 @@ const UpdatePerson = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    const openNotification = (msg, desc=null) => {
+        notification.open({
+            message: msg,
+            description: desc,
+        });
+    };
 
     const onFinish = async (values) => {
-        const res = await axios.put(`${BACKEND_ENDPOINT}/api/persona/${params.id}`, values)
-        dispatch(updatePerson(res.data));
-        navigate('/');
+        try {
+            const res = await axios.put(`${BACKEND_ENDPOINT}/api/persona/${params.id}`, values)
+            dispatch(updatePerson(res.data));
+            openNotification('Actualización de usuario satisfactoria')
+            navigate('/');
+        }catch (e){
+            openNotification('Error al actualizar usuario')
+        }
     }
     if(people !== null) {
         return <Fragment>
